@@ -142,7 +142,7 @@ README.md
 
 - LangGraph
 - LangChain
-- OpenAI GPT-5
+- OpenAI GPT Models
 - GraphRAG
 
 ### Knowledge
@@ -190,17 +190,6 @@ npm run dev
 
 ---
 
-# Roadmap
-
-- Build construction knowledge graph
-- Integrate public construction datasets
-- Implement four specialized AI agents
-- Deploy GraphRAG retrieval
-- Build end-to-end workflow
-- Add dashboard visualizations
-
----
-
 # Demo Scenario
 
 1. User uploads procurement documents.
@@ -212,7 +201,7 @@ npm run dev
 
 ---
 
-# Research Foundation
+# Research
 
 This project is inspired by recent work in:
 
