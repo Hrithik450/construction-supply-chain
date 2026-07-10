@@ -1,0 +1,10 @@
+.DS_Store
+.pycache/
+.uv-cache/
+
+backend/.venv/
+backend/__pycache__/
+backend/.pytest_cache/
+
+frontend/node_modules/
+frontend/.next/
