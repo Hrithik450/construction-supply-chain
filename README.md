@@ -1,160 +1,178 @@
-# Autonomous Construction Supply Chain Brain
+# 🏗️ Autonomous Construction Supply Chain Brain
 
-An AI-first hackathon project for helping construction teams predict supply risk, track material flow, and make faster site-level decisions from one operational brain.
+> An AI-powered multi-agent platform that continuously understands construction projects, predicts downstream supply chain risks, and autonomously recommends corrective actions.
+
+---
 
 ## Overview
 
-Construction supply chains are fragmented across procurement teams, vendors, logistics partners, warehouses, and project sites. This project creates a simple intelligence layer that can:
+Construction supply chains generate enormous amounts of procurement, logistics, vendor, and project information. However, these data sources remain fragmented across disconnected systems, making it difficult for project teams to understand project health in real time.
 
-- monitor material demand and inventory signals,
-- surface risks such as stockouts, delays, and price volatility,
-- recommend next actions for procurement and site teams,
-- provide a future-ready foundation for autonomous workflows.
+Autonomous Construction Supply Chain Brain transforms these disconnected data sources into a unified construction knowledge graph, enabling AI agents to reason across procurement documents, vendors, shipments, schedules, and project dependencies.
 
-The current repository includes:
+---
 
-- a `FastAPI` backend scaffold managed with `uv`,
-- a `Next.js` frontend scaffold for a lightweight dashboard,
-- a root-level README designed for hackathon demos, judging, and future expansion.
+## Problem
 
-## Problem Statement
+Construction teams continuously struggle to answer operational questions such as:
 
-Construction projects often suffer from:
+- What's been approved?
+- What's currently being fabricated?
+- What's delayed?
+- Where is the shipment now?
+- Will it arrive on time?
+- Which downstream tasks will be affected?
 
-- late material deliveries,
-- poor visibility into stock and usage,
-- reactive procurement decisions,
-- communication gaps between planning, sourcing, and execution,
-- cost overruns caused by delays and rushed purchases.
+These questions are often answered manually by reviewing dozens of disconnected documents.
 
-This project aims to centralize signals from these moving parts and turn them into clear, actionable intelligence.
+---
 
-## Vision
+## Solution
 
-Build an "autonomous supply chain brain" that can eventually reason across project plans, inventory, supplier behavior, transportation updates, and on-site progress to help teams answer:
+Our platform acts as an AI-powered Supply Chain Manager.
 
-- What materials are at risk?
-- Which project activities may be delayed?
-- What should be reordered now?
-- Which suppliers or routes need escalation?
-- What is the fastest low-risk recovery plan?
+Instead of retrieving isolated documents, it continuously:
 
-## Core Use Cases
+- Understands project state
+- Detects procurement and shipment risks
+- Predicts schedule impacts
+- Recommends corrective actions
+- Drafts operational workflows for human approval
 
-### 1. Material Risk Monitoring
+---
 
-Detect materials that are likely to go out of stock or arrive late.
+# Architecture
 
-### 2. Procurement Decision Support
+> ![System Architecture](https://res.cloudinary.com/duozomapm/image/upload/v1783713106/architecture-2_y96xnh.svg)
 
-Recommend reorder timing, quantity, and vendor fallback options.
+---
 
-### 3. Site-to-Supply Coordination
+# AI Pipeline
 
-Connect project demand with warehouse, supplier, and logistics status.
+```
+Construction Documents
+        │
+Continuous Ingestion
+        │
+Document Intelligence
+        │
+Ontology Standardization
+        │
+Knowledge Graph (Neo4j)
+        │
+GraphRAG + Hybrid Retrieval
+        │
+Planner Agent
+        │
+Specialized Agents
+        │
+Decision & Execution
+        │
+Human Approval
+```
 
-### 4. Delay Impact Intelligence
+---
 
-Estimate which tasks, milestones, or cost lines are affected by supply disruptions.
+# Specialized AI Agents
 
-### 5. Executive Visibility
+### Procurement Intelligence Agent
 
-Give stakeholders a single dashboard for project health, supply bottlenecks, and operational alerts.
+- Purchase Orders
+- Contracts
+- Invoices
+- RFIs
+- Approval tracking
 
-## Proposed System Architecture
+---
 
-The current MVP structure is intentionally simple:
+### Supply Chain Intelligence Agent
 
-- `frontend/`: Next.js dashboard for status, risks, and recommended actions
-- `backend/`: FastAPI service exposing project, risk, and health endpoints
-- `docs/`: architecture notes, diagrams, pitch material, and design assets
+- Vendors
+- Fabrication
+- Shipments
+- Material availability
 
-### High-Level Flow
+---
 
-1. Data sources provide project, supplier, and inventory context.
-2. Backend normalizes those inputs into domain models.
-3. Risk and recommendation logic produces alerts and actions.
-4. Frontend visualizes summary metrics and operational insights.
+### Impact & Risk Agent
 
-## Diagram Placeholders
+- Dependency reasoning
+- Schedule impacts
+- Critical path analysis
+- Risk identification
 
-Add your diagrams/screenshots in the sections below.
+---
 
-### System Architecture Diagram
+### Decision & Execution Agent
 
-`[Insert architecture diagram here]`
+- Ranked recommendations
+- Confidence scoring
+- Draft vendor emails
+- Follow-up task generation
 
-### Data Flow Diagram
+---
 
-`[Insert data flow diagram here]`
+# MVP Scope
 
-### Agent / Decision Loop Diagram
+The MVP demonstrates:
 
-`[Insert agent workflow diagram here]`
+- Continuous document ingestion
+- Construction Knowledge Graph
+- GraphRAG retrieval
+- Multi-agent reasoning
+- Evidence-backed recommendations
+- Human approval workflow
 
-### UI Screenshots
+---
 
-`[Insert frontend screenshots here]`
+# Repository Structure
 
-## MVP Features
+```text
+backend/
+frontend/
+docs/
+README.md
+```
 
-- project health overview
-- material risk summary
-- delayed shipment / stockout alerts
-- recommended next actions
-- simple API contract between frontend and backend
+---
 
-## Future Features
+# Tech Stack
 
-- supplier scoring
-- route and lead-time prediction
-- autonomous reorder agents
-- natural language operations assistant
-- ERP / procurement / warehouse integrations
-- schedule-aware impact analysis
+### AI
 
-## Tech Stack
+- LangGraph
+- LangChain
+- OpenAI GPT-5
+- GraphRAG
+
+### Knowledge
+
+- Neo4j
+- PostgreSQL
+- OpenAI Embeddings
+
+### Backend
+
+- Python
+- FastAPI
+- Pydantic
 
 ### Frontend
 
 - Next.js
 - React
-- TypeScript
-- simple CSS modules / global styles
+- Tailwind CSS
 
-### Backend
+### Infrastructure
 
-- FastAPI
-- Uvicorn
-- Pydantic
-- `uv` for Python environment and dependency management
+- Docker
+- GitHub
 
-## Repository Structure
+---
 
-```text
-.
-├── README.md
-├── backend
-│   ├── app
-│   │   ├── main.py
-│   │   ├── models.py
-│   │   └── settings.py
-│   ├── pyproject.toml
-│   └── README.md
-├── docs
-└── frontend
-    ├── app
-    ├── components
-    ├── lib
-    ├── package.json
-    ├── next.config.ts
-    ├── tsconfig.json
-    └── README.md
-```
+# Local Development
 
-## Local Development
-
-### Backend
+## Backend
 
 ```bash
 cd backend
@@ -162,9 +180,7 @@ uv sync
 uv run uvicorn app.main:app --reload
 ```
 
-Backend runs on `http://127.0.0.1:8000`.
-
-### Frontend
+## Frontend
 
 ```bash
 cd frontend
@@ -172,43 +188,36 @@ npm install
 npm run dev
 ```
 
-Frontend runs on `http://localhost:3000`.
+---
 
-## API Endpoints
+# Roadmap
 
-### `GET /health`
+- Build construction knowledge graph
+- Integrate public construction datasets
+- Implement four specialized AI agents
+- Deploy GraphRAG retrieval
+- Build end-to-end workflow
+- Add dashboard visualizations
 
-Basic service health check.
+---
 
-### `GET /api/v1/overview`
+# Demo Scenario
 
-Returns demo dashboard metrics and risk insights.
+1. User uploads procurement documents.
+2. AI extracts entities and relationships.
+3. Knowledge Graph is updated.
+4. Agents detect supply chain risks.
+5. AI recommends corrective actions.
+6. User approves operational workflows.
 
-## Demo Story For Judges
+---
 
-1. A project team opens the dashboard.
-2. They immediately see high-risk materials and blocked shipments.
-3. The system highlights likely schedule impact.
-4. Recommended actions guide the team toward faster recovery.
-5. The platform evolves from decision support into partial autonomy.
+# Research Foundation
 
-## Hackathon Positioning
+This project is inspired by recent work in:
 
-This project is designed to showcase:
-
-- real-world operational pain point selection,
-- practical AI product framing,
-- clean full-stack engineering setup,
-- a credible path from MVP to autonomous enterprise workflow.
-
-## Contribution Notes
-
-This repository is currently scaffolded for fast iteration during a hackathon. Keep the architecture simple, demo-friendly, and easy to extend.
-
-## Next Steps
-
-- connect real or mock construction supply data,
-- implement risk scoring logic,
-- add charts and alert cards,
-- integrate an LLM-powered operations copilot,
-- replace placeholder diagrams with final visuals.
+- Construction Knowledge Graphs
+- GraphRAG
+- Multi-Agent Systems
+- Construction Document Intelligence
+- Enterprise AI Workflows

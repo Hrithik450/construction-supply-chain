@@ -17,7 +17,11 @@
 
 html {
   background:
-    radial-gradient(circle at top left, rgba(197, 97, 45, 0.16), transparent 28%),
+    radial-gradient(
+      circle at top left,
+      rgba(197, 97, 45, 0.16),
+      transparent 28%
+    ),
     linear-gradient(180deg, #f8f4ec 0%, #efe7da 100%);
 }
 
@@ -43,14 +47,19 @@ a {
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: linear-gradient(135deg, rgba(255, 253, 248, 0.92), rgba(239, 229, 214, 0.82));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 253, 248, 0.92),
+    rgba(239, 229, 214, 0.82)
+  );
   box-shadow: var(--shadow);
 }
 
 .hero h1,
 .panel h2,
 .risk-card h3 {
-  font-family: "Space Grotesk", "Avenir Next Condensed", "Trebuchet MS", sans-serif;
+  font-family:
+    "Space Grotesk", "Avenir Next Condensed", "Trebuchet MS", sans-serif;
 }
 
 .hero h1 {
