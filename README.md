@@ -41,13 +41,13 @@ Instead of retrieving isolated documents, it continuously:
 
 ---
 
-# Architecture Data Flow
+# Architecture
 
-![System Architecture](https://res.cloudinary.com/duozomapm/image/upload/v1784032158/Autonomous_Construction_Supply_Chain_Brain_fyijii.png)
+![System Architecture](https://res.cloudinary.com/duozomapm/image/upload/v1784032586/Autonomous_Construction_Supply_Chain_Brain_djv9sj.png)
 
 ---
 
-# Architecture
+# Architecture Data Flow
 
 ![Architecture Data Flow](https://res.cloudinary.com/duozomapm/image/upload/v1783713106/architecture-2_y96xnh.svg)
 
