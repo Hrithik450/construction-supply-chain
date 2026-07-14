@@ -41,9 +41,15 @@ Instead of retrieving isolated documents, it continuously:
 
 ---
 
+# Architecture Data Flow
+
+![System Architecture](https://res.cloudinary.com/duozomapm/image/upload/v1784032158/Autonomous_Construction_Supply_Chain_Brain_fyijii.png)
+
+---
+
 # Architecture
 
-> ![System Architecture](https://res.cloudinary.com/duozomapm/image/upload/v1783713106/architecture-2_y96xnh.svg)
+![Architecture Data Flow](https://res.cloudinary.com/duozomapm/image/upload/v1783713106/architecture-2_y96xnh.svg)
 
 ---
 
@@ -109,19 +115,6 @@ Human Approval
 - Confidence scoring
 - Draft vendor emails
 - Follow-up task generation
-
----
-
-# MVP Scope
-
-The MVP demonstrates:
-
-- Continuous document ingestion
-- Construction Knowledge Graph
-- GraphRAG retrieval
-- Multi-agent reasoning
-- Evidence-backed recommendations
-- Human approval workflow
 
 ---
 
